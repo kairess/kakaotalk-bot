@@ -61,6 +61,10 @@ def is_gray(color):
     r, g, b = color
     return (r > 30 and g > 30 and b > 30) and (r < 60 and g < 60 and b < 60)
 
+def is_white(color):
+    r, g, b = color
+    return r > 240 and g > 240 and b > 240
+
 
 def extract_conversations_by_color(ocr_result, image_path, confidence_threshold=0.5, dialogue_y_threshold=(100, 550)):
     image = Image.open(image_path).convert('RGB')
@@ -84,7 +88,7 @@ def extract_conversations_by_color(ocr_result, image_path, confidence_threshold=
         
         if is_yellow(color):
             user = "나"
-        elif is_gray(color):
+        elif is_white(color):
             user = "상대방"
         else:
             continue
