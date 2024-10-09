@@ -12,12 +12,15 @@
 - 대화창 캡처 및 OCR을 통한 텍스트 추출
 - GPT 모델을 사용한 맥락에 맞는 응답 생성
 - 자동 응답 전송
+- Clova OCR API를 사용한 이미지 텍스트 추출
+- 대화 참여자 구분 (나/상대방)
 
 ## 필요 조건
 
 - Python 3.7+
-- 필요한 라이브러리: pyautogui, pygetwindow, pyperclip, openai
+- 필요한 라이브러리: pyautogui, pygetwindow, pyperclip, openai, requests, Pillow
 - OpenAI API 키
+- Clova OCR API 키 및 URL
 
 ## 설치 방법
 
@@ -28,12 +31,14 @@
 
 2. 필요한 라이브러리를 설치합니다:
    ```
-   pip install pyautogui pygetwindow pyperclip openai
+   pip install pyautogui pygetwindow pyperclip openai requests Pillow
    ```
 
-3. OpenAI API 키를 환경 변수로 설정합니다:
+3. OpenAI API 키와 Clova OCR API 키를 환경 변수로 설정합니다:
    ```
-   export OPENAI_API_KEY='your-api-key-here'
+   export OPENAI_API_KEY='your-openai-api-key-here'
+   export CLOVA_OCR_API_URL='your-clova-ocr-api-url-here'
+   export CLOVA_OCR_SECRET_KEY='your-clova-ocr-secret-key-here'
    ```
 
 ## 사용 방법
